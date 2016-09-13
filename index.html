@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>FutureSpace</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="./release/futurespace.min.css" />
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/futurespace.css" />
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+        <script src="./min/futurespace.min.js"></script>
+    </head>
+
+    <body>
+        <canvas id="main-canvas"></canvas>
+        <div class="ui-overlay">
+            <div class="title bg-theme">
+                <h1 onclick="openModal('nav')">
+                    <span class="name">Dining Hall & stuff</span>
+                    <span>Explore</span>
+                </h1>
+                <a class="title-handle" onclick="$(this).parent().toggleClass('collapsed')"></a>
+            </div>
+
+            <div class="nav-mode-wrapper bg-theme desktop-only">
+                <a id="mode-walkthrough" class="walkthrough"></a>
+                <a id="mode-dollhouse" class="dollhouse"></a>
+                <a id="mode-floorplan" class="floorplan"></a>
+            </div>
+
+            <a class="menu-small-trigger bg-theme mobile-only" onclick="openModal('menu-small')"></a>
+
+            <div id="nav" class="nav bg-theme" onclick="closeModal('nav')">
+                <span class="close" onclick="closeModal('nav')"></span>
+
+                <!-- <span class="nav-item">Entrance & Foyer</span>
+                <span class="nav-item">Master Bedroom</span> -->
+            </div>
+
+            <div id="meta-small" class="meta-small fs-wrapper bg-theme mobile-only">
+                <span class="close" onclick="closeModal('meta-small')"></span>
+
+                Meta data here...
+            </div>
+
+            <div id="map-small" class="map-small fs-wrapper bg-theme mobile-only">
+                <span class="close" onclick="closeModal('map-small')"></span>
+
+                Map
+            </div>
+
+            <div id="menu-small" class="menu-small fs-wrapper bg-theme mobile-only" onclick="closeModal('menu-small')">
+                <span class="close" onclick="closeModal('menu-small')"></span>
+
+                <div class="menu-small-row">
+                    <div class="menu-small-button-wrapper">
+                        <a class="menu-small-button meta" onclick="openModal('meta-small')"></a>
+                    </div>
+                    <div class="menu-small-button-wrapper">
+                        <a class="menu-small-button help"></a>
+                    </div>
+                    <div class="menu-small-button-wrapper">
+                        <a class="menu-small-button fullscreen"></a>
+                    </div>
+                </div>
+
+                <div class="menu-small-row">
+                    <div class="menu-small-button-wrapper">
+                        <a class="menu-small-button map" onclick="openModal('map-small')"></a>
+                    </div>
+                    <div class="menu-small-button-wrapper">
+                        <a id="autotour" class="menu-small-button autotour"></a>
+                    </div>
+                    <div class="menu-small-button-wrapper">
+                        <a class="menu-small-button vr"></a>
+                    </div>
+                </div>
+
+                <div class="menu-small-row">
+                    <div class="menu-small-button-wrapper">
+                        <a id="mode-walkthrough" class="menu-small-button walkthrough"></a>
+                    </div>
+                    <div class="menu-small-button-wrapper">
+                        <a id="mode-dollhouse" class="menu-small-button dollhouse"></a>
+                    </div>
+                    <div class="menu-small-button-wrapper">
+                        <a id="mode-floorplan" class="menu-small-button floorplan"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
